@@ -1,0 +1,53 @@
+1.Find the author with the name 'Kara Melton' and then select all the articles she has written.
+
+select id from authors where name='Kara Melton';
+select title from articles where author_id = 8;
+
+2.Find Ontario in the provinces table and then find all the cities in that province.
+
+select id from provinces where name='Ontario';
+one_to_many_assignment=# select name from cities where province_id=14;
+
+3.Who wrote the article called 'Coding Bootcamps and Emotional Labor'?
+
+select author_id from articles where title='Coding Bootcamps and Emotional Labor';
+select name from authors where id=4;
+
+4.Write a series of SQL queries to find out how many provinces are in Canada.
+
+select distinct name from provinces;
+
+5.How many people live at 4740 McDermott Street?
+
+select id from residences where address='4740 McDermott Street';
+select count(id) from persons where residence_id='9';
+
+
+6.What city is 4740 McDermott Street in?
+
+select city_id from residences where address='4740 McDermott Street';
+select name from cities where id=11;
+
+7.What province is 4740 McDermott Street in?
+
+select province_id from cities where id=11;
+select name from provinces where id=14;
+
+8.What country is 4740 McDermott Street in?
+
+select country_id from provinces where id=14;
+select name from countries where id=1;
+
+9.Find the person named 'Destini Davis' and then use a series of SQL queries to find what country they live in.
+
+select residence_id from persons where name='Destini Davis';
+select city_id from residences where id=2;
+select name from cities where id=8;
+select province_id from cities where name='Toronto';
+select country_id from provinces where id=14;
+select name from countries where id=1;
+
+10.How many articles has Aditya Mukerjee written?
+
+select id from authors where name='Aditya Mukerjee';
+select count(title) from articles where author_id=2;
